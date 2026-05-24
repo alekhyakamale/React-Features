@@ -7,6 +7,12 @@ import TabRenderer from "./Features/Tabs/TabRenderer";
 import UseMemoUsage from "./Features/useMemoUsage"
 import UseCallbackUsage from "./Features/useCallbackUsage";
 import PerformanceHooksUsage from "./Features/performanceHooksUsage";
+import CorrectUse from "./Features/MemoizationApps/CorrectUse";
+import CatCompanionDashboard from "./Features/MemoizationApps/CatCompanionDashboard";
+import ProductList from "./Features/Problems/ProductListMemoization";
+import CommentFeed from "./Features/Problems/CommentFeed";
+import SearchPanel from "./Features/Problems/SearchPanel";
+import ContextMemo from "./Features/ContextMemo";
 
 export const UserContext = React.createContext(null);
 export const ThemeContext = React.createContext('light');
@@ -34,6 +40,12 @@ export default function App() {
               <Route path="/usememo" element={<UseMemoUsage />} />
               <Route path="/usecallback" element={<UseCallbackUsage />} />
               <Route path="/performance" element={<PerformanceHooksUsage />} />
+              <Route path="/correctuse" element={<CorrectUse />} />
+              <Route path="/catcompanion" element={<CatCompanionDashboard />} />
+              <Route path="/productlistMemoization" element={<ProductList />} />
+              <Route path="/commentFeed" element={<CommentFeed />} />
+              <Route path="/searchPanel" element={<SearchPanel />} />
+              <Route path="/contextMemo" element={<ContextMemo />} />
             </Routes>
           </TabsContext.Provider>
         </UserContext.Provider>
