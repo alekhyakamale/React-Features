@@ -11,7 +11,6 @@ export default function DebounceSearchWithCancellation() {
             try {
                 const data = await fetch('/someUrl');
                 const res = await data.json();
-                //set the results in a setter/redux + handle loading
             }
             catch(e) {
                 console.log("error: ",e);

@@ -17,9 +17,9 @@ export default function App() {
       <ThemeContext.Provider value={theme}>
         <UserContext.Provider value={user}>
           <TabsContext.Provider value={{activeTab, setActiveTab}}>
-            <button onClick={() => setTheme(t => t === 'light' ? 'dark' : 'light')}>
+            {/* <button onClick={() => setTheme(t => t === 'light' ? 'dark' : 'light')}>
               Toggle theme
-            </button>
+            </button> */}
             <AppRoutes />
           </TabsContext.Provider>
         </UserContext.Provider>
