@@ -22,6 +22,9 @@ import Stopwatch from "./Features/Stopwatch";
 import RickAndMortySearch from "./Features/RickMortySearch";
 import Accordions from "./Features/Accordions";
 import ModalApp from "./Features/OverlayModal";
+import SignupForm from "./Features/SignupForm";
+import WeatherApp from "./Features/WeatherApp";
+import Todo from "./Features/To-do";
 
 const routes = [
   { path: "/dog", label: "Dog Photo" },
@@ -46,6 +49,9 @@ const routes = [
   { path: "/rickmortysearch", label: "Rick and Morty Search" },
   { path: "/accordions", label: "Accordions" },
   { path: "/overlaymodal", label: "Overlay Modal" },
+  { path: "/signup", label: "Signup Form" },
+  { path: "/weather", label: "Weather App" },
+  { path: "/todo", label: "Todo" },
 ];
 
 function Home() {
@@ -86,6 +92,9 @@ export default function AppRoutes() {
       <Route path="/rickmortysearch" element={<RickAndMortySearch />} />
       <Route path="/accordions" element={<Accordions />} />
       <Route path="/overlaymodal" element={<ModalApp />} />
+      <Route path="/signup" element={<SignupForm />} />
+      <Route path="/weather" element={<WeatherApp />} />
+      <Route path="/todo" element={<Todo />} />
     </Routes>
   );
 }

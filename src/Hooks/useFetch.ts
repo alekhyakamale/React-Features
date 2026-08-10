@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 
-export default function useFetch(url) {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+export default function useFetch<T>(url: string) {
+    const [data, setData] = useState<T | null>(null);
+    const [loading, setLoading] = useState<Boolean>(true);
+    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         setData(null);
@@ -12,12 +12,12 @@ export default function useFetch(url) {
         const fetchData = async function () {
             try {
                 const res = await fetch(url); //receiving stream of data
-                const data = await res.json(); // need to wait till the stream fills the bucket
+                const data: T = await res.json(); // need to wait till the stream fills the bucket
                 setLoading(false);
                 setData(data);
             }
             catch (error) {
-                setError(error);
+                setError(error instanceof Error ? error : new Error(String(error)));
             }
             finally {
                 setLoading(false);
